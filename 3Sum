@@ -1,0 +1,24 @@
+class Solution {
+public:
+    vector<vector<int>> threeSum(vector<int>& nums) {
+        set<vector<int>> st;
+        for(int i=0; i<nums.size();i++)
+        {
+            set<int> hashSet;
+            int j;
+            for(j=i+1;j<nums.size();j++)
+            {
+                int k = -(nums[i]+nums[j]);
+                if(hashSet.find(k)!=hashSet.end())
+                {
+                    vector<int> temp = {nums[i],nums[j],k};
+                    sort(temp.begin(),temp.end());
+                    st.insert(temp); 
+                }
+                hashSet.insert(nums[j]);
+            }
+        }
+        vector<vector<int>> ans(st.begin(),st.end());
+        return ans;
+    }
+};
