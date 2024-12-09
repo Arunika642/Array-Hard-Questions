@@ -1,13 +1,13 @@
 class Solution {
 public:
     vector<vector<int>> threeSum(vector<int>& nums) {
-        set<vector<int>> st;
+        set<vector<int>> st;  //to store the unique triplets
         for(int i=0; i<nums.size();i++)
         {
-            set<int> hashSet;
-            int j;
-            for(j=i+1;j<nums.size();j++)
+            set<int> hashSet;   //initialized here so that everytime i's value is changed new set is created, this set is created to store unique value of j
+            for(int j=i+1;j<nums.size();j++)
             {
+                hashSet.insert(j);
                 int k = -(nums[i]+nums[j]);
                 if(hashSet.find(k)!=hashSet.end())
                 {
@@ -18,7 +18,7 @@ public:
                 hashSet.insert(nums[j]);
             }
         }
-        vector<vector<int>> ans(st.begin(),st.end());
+        vector<vector<int>> ans(st.begin(),st.end());  //to store all triplets present in the st set
         return ans;
     }
 };
