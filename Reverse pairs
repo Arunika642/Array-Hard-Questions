@@ -1,3 +1,4 @@
+
 int team(vector <int> & skill, int n)
 {
     // Write your code here.
