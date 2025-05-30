@@ -1,7 +1,5 @@
 class Solution {
 public:
-
-    
     vector<int> rows(int N)
     {
         vector<int> res;
