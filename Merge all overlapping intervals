@@ -1,5 +1,4 @@
 #include<vector>
-
 vector<vector<int>> mergeOverlappingIntervals(vector<vector<int>> &arr) {
   // Write your code here.
   vector<vector<int>> ans;
